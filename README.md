@@ -42,9 +42,7 @@ services:
     environment:
       - NODE_NAME=<brand>-n
 
-# If you can find a way to make this programmatically
-# create new `NODE_NAME`s I'm all ears. Until then,
-# Until then it's this silly copy pasta 😭😭😭
+# If you can find a way to make this programmatically create new `NODE_NAME`s I'm all ears. Until then, it's this silly copy pasta 😭😭😭
 ```
 
 4. Run the nodes with `docker compose up --remove-orphans --build` (use `-d` if you want to silence the output)
