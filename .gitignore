@@ -19,3 +19,6 @@
 
 # Go workspace file
 go.work
+*.env
+node-bin/*
+!node-bin/.git-keep

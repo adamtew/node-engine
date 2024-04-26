@@ -1,0 +1,75 @@
+version: '3.4'
+
+x-service:
+  &service
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    env_file: 
+      - ./defaults.env
+    restart: unless-stopped
+
+x-hyper:
+  &hyper
+  << : *service
+  env_file:
+    - ./hyper.env
+  entrypoint: /entrypoint.sh hyper
+
+x-grow:
+  &grow
+  << : *service
+  env_file:
+    - ./grow.env
+  entrypoint: /entrypoint.sh grow
+
+services:
+  hyper-1:
+    << : *hyper
+    environment:
+      - NODE_NAME=hyper-1
+  hyper-2:
+    << : *hyper
+    environment:
+      - NODE_NAME=hyper-2
+  hyper-3:
+    << : *hyper
+    environment:
+      - NODE_NAME=hyper-3
+  hyper-4:
+    << : *hyper
+    environment:
+      - NODE_NAME=hyper-4
+  hyper-5:
+    << : *hyper
+    environment:
+      - NODE_NAME=hyper-5
+  hyper-6:
+    << : *hyper
+    environment:
+      - NODE_NAME=hyper-6
+  hyper-7:
+    << : *hyper
+    environment:
+      - NODE_NAME=hyper-7
+  hyper-8:
+    << : *hyper
+    environment:
+      - NODE_NAME=hyper-8
+  hyper-9:
+    << : *hyper
+    environment:
+      - NODE_NAME=hyper-9
+  hyper-10:
+    << : *hyper
+    environment:
+      - NODE_NAME=hyper-10
+  hyper-11:
+    << : *hyper
+    environment:
+      - NODE_NAME=hyper-11
+
+  grow-1:
+    << : *grow
+    environment:
+      - NODE_NAME=grow-2
